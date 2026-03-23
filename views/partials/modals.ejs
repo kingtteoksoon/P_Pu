@@ -1,0 +1,76 @@
+<!-- ADMIN LOGIN MODAL -->
+<div class="modal-overlay" id="adminLoginModal">
+  <div class="modal" style="max-width:400px;">
+    <button class="modal-close" id="closeAdminLogin">×</button>
+    <div class="modal-title" style="font-size:28px; margin-bottom:8px;">관리자</div>
+    <p style="font-size:11px; color:var(--gray-light); letter-spacing:0.1em; margin-bottom:32px;">
+      관리자 비밀번호를 입력하세요
+    </p>
+    <div id="adminFormSection">
+      <div class="form-group">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-input" id="adminPwInput"
+               placeholder="••••••••"
+               onkeydown="if(event.key==='Enter') Admin.verify()">
+        <div id="adminPwErr" style="font-size:10px;letter-spacing:.15em;color:#c0392b;margin-top:8px;display:none;text-transform:uppercase;">
+          비밀번호가 올바르지 않습니다
+        </div>
+      </div>
+      <button class="form-submit" onclick="Admin.verify()" style="margin-top:8px;">확인</button>
+    </div>
+
+    <div id="adminLoggedInInfo" style="display:none; margin-top:28px; padding-top:24px; border-top:1px solid var(--border);">
+      <div style="font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--gray-light);margin-bottom:16px;">
+        관리자 세션 활성
+      </div>
+      <button class="upload-btn" style="width:100%;justify-content:center;" onclick="Admin.openUpload()">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M7 1v8M3 5l4-4 4 4M1 11h12v2H1z" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+        프로젝트 추가
+      </button>
+      <button onclick="Admin.logout()" class="btn-ghost" style="width:100%;margin-top:10px;">
+        로그아웃
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- UPLOAD MODAL (관리자 전용) -->
+<div class="modal-overlay" id="uploadModal">
+  <div class="modal">
+    <button class="modal-close" id="closeUpload">×</button>
+    <div class="modal-title">프로젝트 추가</div>
+
+    <div class="drop-zone" id="dropZone">
+      <div>이미지를 드래그하거나 클릭하여 업로드</div>
+      <input type="file" id="fileInput" accept="image/*" style="display:none">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">프로젝트 제목 <span style="color:#c0392b">*</span></label>
+      <input type="text" class="form-input" id="projTitle" placeholder="프로젝트 이름">
+    </div>
+    <div class="form-group">
+      <label class="form-label">카테고리</label>
+      <select class="form-select" id="projCat">
+        <option value="">선택하세요</option>
+        <option>3D Modeling</option>
+        <option>Game Dev</option>
+        <option>VFX</option>
+        <option>Motion</option>
+        <option>Illustration</option>
+        <option>Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label class="form-label">설명</label>
+      <textarea class="form-textarea" id="projDesc" placeholder="프로젝트에 대한 간단한 설명..."></textarea>
+    </div>
+    <div class="form-group">
+      <label class="form-label">연도</label>
+      <input type="text" class="form-input" id="projYear" placeholder="2026">
+    </div>
+    <button class="form-submit" onclick="ProjectManager.add()">프로젝트 추가하기</button>
+  </div>
+</div>

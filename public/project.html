@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project — 김석현 Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=IBM+Plex+Mono:wght@300;400&family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/project.css">
+</head>
+<body>
+
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="/" class="nav-logo">김석현</a>
+  <ul class="nav-links">
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#projects">Projects</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+  <button class="nav-hamburger" id="hamburgerBtn" aria-label="메뉴 열기">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-progress" id="navProgress"></div>
+</nav>
+
+<!-- MOBILE OVERLAY -->
+<div class="nav-mobile-overlay" id="mobileOverlay">
+  <ul class="nav-mobile-links">
+    <li><a href="/#about"    class="mobile-link">About</a></li>
+    <li><a href="/#projects" class="mobile-link">Projects</a></li>
+    <li><a href="/#contact"  class="mobile-link">Contact</a></li>
+  </ul>
+  <div class="nav-mobile-footer">Kim Seokhyun — Portfolio 2026</div>
+</div>
+
+<!-- BACK BAR -->
+<div class="proj-back-bar">
+  <a href="/#projects" class="proj-back-link">
+    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+      <path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.2"/>
+    </svg>
+    Projects
+  </a>
+  <div class="proj-nav-arrows">
+    <a href="#" id="prevBtn" class="proj-arrow-btn" title="이전 프로젝트">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+        <path d="M13 8H3M7 4l-4 4 4 4" stroke="currentColor" stroke-width="1.2"/>
+      </svg>
+    </a>
+    <a href="#" id="nextBtn" class="proj-arrow-btn" title="다음 프로젝트">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2"/>
+      </svg>
+    </a>
+  </div>
+</div>
+
+<!-- LOADING -->
+<div id="projLoading" class="proj-loading">
+  <div class="proj-loading-dot"></div>
+</div>
+
+<!-- MAIN CONTENT (JS가 채움) -->
+<main id="projMain" class="proj-main" style="opacity:0;">
+
+  <!-- HERO -->
+  <div class="proj-hero">
+    <div class="proj-hero-meta reveal">
+      <span class="proj-num" id="dNum">—</span>
+      <div class="proj-hero-tags" id="dTags"></div>
+    </div>
+    <h1 class="proj-title reveal" id="dTitle">—</h1>
+    <div class="proj-hero-sub reveal">
+      <span class="proj-year" id="dYear">—</span>
+      <span class="proj-status" id="dStatus"></span>
+    </div>
+  </div>
+
+  <!-- IMAGE GALLERY -->
+  <div class="proj-gallery reveal" id="dGallery"></div>
+
+  <!-- BODY -->
+  <div class="proj-body">
+    <div class="proj-desc-block reveal">
+      <div class="proj-label">Overview</div>
+      <p class="proj-desc" id="dDesc">—</p>
+    </div>
+    <div class="proj-meta-block reveal">
+      <div class="proj-meta-row">
+        <div class="proj-label">Category</div>
+        <div class="proj-meta-val" id="dCategory">—</div>
+      </div>
+      <div class="proj-meta-row">
+        <div class="proj-label">Year</div>
+        <div class="proj-meta-val" id="dYearMeta">—</div>
+      </div>
+      <div class="proj-meta-row" id="dStatusRow">
+        <div class="proj-label">Status</div>
+        <div class="proj-meta-val" id="dStatusMeta">—</div>
+      </div>
+      <!-- 외부 링크 (JS가 채움, 링크 없으면 숨김) -->
+      <div class="proj-meta-row proj-links-row" id="dLinksRow" style="display:none;">
+        <div class="proj-label">Links</div>
+        <div class="proj-ext-links" id="dLinks"></div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">김석현 — Kim Seokhyun</div>
+  <div class="footer-copy">© 2026. All rights reserved.</div>
+</footer>
+
+<script src="/js/config.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/nav.js"></script>
+<script src="/js/project-detail.js"></script>
+</body>
+</html>

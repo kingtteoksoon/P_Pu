@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <%- include('partials/head') %>
+</head>
+<body>
+
+<div id="cursor"></div>
+
+<%- include('partials/nav') %>
+
+<!-- ══════════════════════════════ HERO ══════════════════════════════ -->
+<section id="hero">
+  <div class="hero-index">KD — 2026</div>
+  <div class="hero-main">
+    <div class="hero-tag fade-up">3D Designer &amp; Game Developer</div>
+    <h1 class="hero-name fade-up delay-1">Kim<br><em>Dol</em></h1>
+    <p class="hero-desc fade-up delay-2">
+      3D 디자인과 게임 개발을 중심으로,<br>
+      AI와 인터랙티브 미디어를 탐구하는<br>
+      크리에이티브 개발자.
+    </p>
+    <a href="#projects" class="hero-cta fade-up delay-3">
+      프로젝트 보기
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2"/>
+      </svg>
+    </a>
+  </div>
+  <div class="hero-side fade-up delay-2">
+    <div class="hero-stat"><div class="hero-stat-num">3D</div><div class="hero-stat-label">Design Major</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">21</div><div class="hero-stat-label">Years Old</div></div>
+    <div class="hero-stat"><div class="hero-stat-num">∞</div><div class="hero-stat-label">Ideas / Day</div></div>
+  </div>
+  <div class="hero-scroll"><span>Scroll</span></div>
+</section>
+
+<!-- ══════════════════════════════ ABOUT ══════════════════════════════ -->
+<section id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-num">01</div>
+      <div class="section-title-block">
+        <div class="section-tag">Profile &amp; Background</div>
+        <h2 class="section-title">나에 대하여</h2>
+      </div>
+    </div>
+    <div class="profile-grid">
+      <div class="profile-left reveal">
+        <div class="profile-name-large">김돌</div>
+        <div class="profile-name-en">Kim Dol</div>
+        <p class="profile-bio">
+          3D 디자인을 전공하며 게임 개발과 AI 기술을 접목한<br>
+          인터랙티브 콘텐츠를 제작합니다.<br>
+          현재 졸업 프로젝트 <em style="color:var(--white)">「판타지 세계 사진작가」</em>를<br>
+          솔로 개발자로 진행 중입니다.
+        </p>
+        <table class="info-table">
+          <tr><td>생년월일</td><td>2004년</td></tr>
+          <tr><td>국적</td><td>대한민국</td></tr>
+          <tr><td>소속</td><td>대학교 디자인학과 (3D) 재학 중</td></tr>
+          <tr><td>복무</td><td>현역 복무 중</td></tr>
+          <tr><td>이메일</td><td>your@email.com</td></tr>
+          <tr><td>ArtStation</td><td>artstation.com/yourusername</td></tr>
+        </table>
+      </div>
+      <div class="profile-right reveal">
+        <div class="profile-section-title">학력</div>
+        <div class="timeline" style="margin-bottom:48px;">
+          <div class="timeline-item">
+            <div class="timeline-year">현재</div>
+            <div class="timeline-content">
+              <div class="timeline-title">OO대학교 디자인학과 (3D)</div>
+              <div class="timeline-sub">재학 중 — 졸업 예정</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2023</div>
+            <div class="timeline-content">
+              <div class="timeline-title">OO고등학교</div>
+              <div class="timeline-sub">졸업</div>
+            </div>
+          </div>
+        </div>
+        <div class="profile-section-title">수상 이력</div>
+        <div class="timeline" style="margin-bottom:48px;">
+          <div class="timeline-item">
+            <div class="timeline-year">2025</div>
+            <div class="timeline-content">
+              <div class="timeline-title">수상명을 입력하세요</div>
+              <div class="timeline-sub">주최 기관명</div>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2024</div>
+            <div class="timeline-content">
+              <div class="timeline-title">수상명을 입력하세요</div>
+              <div class="timeline-sub">주최 기관명</div>
+            </div>
+          </div>
+        </div>
+        <div class="profile-section-title">Skills</div>
+        <div class="skills-list">
+          <span class="skill-tag">Blender</span>
+          <span class="skill-tag">Unreal Engine</span>
+          <span class="skill-tag">Unity</span>
+          <span class="skill-tag">C#</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">After Effects</span>
+          <span class="skill-tag">Photoshop</span>
+          <span class="skill-tag">AI Pipeline</span>
+          <span class="skill-tag">3D Modeling</span>
+          <span class="skill-tag">Game Design</span>
+          <span class="skill-tag">VFX</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ PROJECTS ══════════════════════════════ -->
+<section id="projects">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-num">02</div>
+      <div class="section-title-block">
+        <div class="section-tag">Works &amp; Projects</div>
+        <h2 class="section-title">프로젝트</h2>
+      </div>
+    </div>
+
+    <div class="projects-grid" id="projectsList">
+      <% projects.forEach((p, i) => { %>
+      <div class="project-item reveal" data-id="<%= p.id %>">
+        <div class="project-num"><%= String(i + 1).padStart(3, '0') %></div>
+        <div class="project-main">
+          <div class="project-title"><%= p.title %></div>
+          <div class="project-desc"><%= p.description %></div>
+          <div class="project-tags">
+            <% p.tags.forEach(tag => { %>
+              <span class="project-tag"><%= tag %></span>
+            <% }) %>
+          </div>
+        </div>
+        <div class="project-meta">
+          <div class="project-year"><%= p.year %><% if(p.status) { %> — <%= p.status %><% } %></div>
+          <% if (isAdmin) { %>
+          <button class="btn-delete-project" onclick="ProjectManager.remove(<%= p.id %>, this)" title="삭제">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M1 1l10 10M11 1L1 11" stroke="currentColor" stroke-width="1.2"/>
+            </svg>
+          </button>
+          <% } %>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+
+    <!-- 관리자만 보이는 추가 버튼 -->
+    <% if (isAdmin) { %>
+    <div style="margin-top:60px; display:flex; justify-content:flex-end;">
+      <button class="upload-btn" id="openUpload">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M7 1v8M3 5l4-4 4 4M1 11h12v2H1z" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+        프로젝트 추가
+      </button>
+    </div>
+    <% } %>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ CONTACT ══════════════════════════════ -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-num">03</div>
+      <div class="section-title-block">
+        <div class="section-tag">Get In Touch</div>
+        <h2 class="section-title">연락하기</h2>
+      </div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-left reveal">
+        <h3 class="contact-headline">함께<br><em>만들어</em><br>봅시다</h3>
+        <p class="contact-desc">협업 제안, 프로젝트 문의,<br>혹은 그냥 인사도 환영합니다.</p>
+        <div class="contact-links">
+          <a href="mailto:your@email.com" class="contact-link">
+            <div class="contact-link-info">
+              <span class="contact-link-type">Email</span>
+              <span class="contact-link-value">your@email.com</span>
+            </div>
+            <svg class="contact-link-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2"/>
+            </svg>
+          </a>
+          <a href="https://www.artstation.com/yourusername" target="_blank" class="contact-link">
+            <div class="contact-link-info">
+              <span class="contact-link-type">ArtStation</span>
+              <span class="contact-link-value">artstation.com/yourusername</span>
+            </div>
+            <svg class="contact-link-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.2"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="contact-right reveal">
+        <div class="contact-form-title">메시지 보내기</div>
+        <div class="form-group">
+          <label class="form-label">이름</label>
+          <input type="text" class="form-input" id="contactName" placeholder="홍길동">
+        </div>
+        <div class="form-group">
+          <label class="form-label">이메일</label>
+          <input type="email" class="form-input" id="contactEmail" placeholder="hello@example.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">메시지</label>
+          <textarea class="form-textarea" id="contactMsg" placeholder="안녕하세요, 협업 제안이 있습니다..."></textarea>
+        </div>
+        <button class="form-submit" onclick="handleContactSubmit(this)">전송하기</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
+<footer>
+  <div class="footer-name" id="footerTrigger">김돌 — Kim Dol</div>
+  <div class="footer-copy">© 2026. All rights reserved.</div>
+</footer>
+
+<%- include('partials/modals') %>
+
+<script>
+  // 서버에서 관리자 상태 주입
+  window.__IS_ADMIN__ = <%= isAdmin ? 'true' : 'false' %>;
+</script>
+<script src="/js/nav.js"></script>
+<script src="/js/admin.js"></script>
+<script src="/js/projects.js"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>
